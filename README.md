@@ -8,14 +8,16 @@ This repository contains code for building a terminal-based chatbot using OpenAI
 Before you begin, you'll need to sign up for an OpenAI API key. You can sign up [here](https://beta.openai.com/signup/) and get your API key [here](https://platform.openai.com/account/api-keys). 
 
 Once you have your API key, you can install the openai library using pip:
-* ```pip install openai```
+
+`pip install openai`
 
 You will need to replace the API Key in the code in order to run the chatbot
 * You can do this by replacing the value of the variable `openai.api_key` with your API key, in the file [`chat.py` line 3](/chat.py#L3)
 
 ## Usage 💬
 To start the chatbot, run the following command:
-```python chat.py```
+
+`python chat.py`
 
 You can enter your prompts and the chatbot will generate responses. It will continue to respond until you enter the message `exit` to exit the program. You can also enter ```clear``` to clear the chat history and start a new conversation.
 
