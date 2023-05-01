@@ -8,9 +8,13 @@ messages = [
     {"role": "system", "content": "Hi ChatGPT, You are a helpful assistant!"},
 ]
 
-chat_completion = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=messages)
-reply = chat_completion["choices"][0]["message"]["content"]
-messages.append({"role": "assistant", "content": reply})
+try:
+    chat_completion = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=messages)
+    reply = chat_completion["choices"][0]["message"]["content"]
+    messages.append({"role": "assistant", "content": reply})
+except:
+    print("Check if you have set the API key correctly")
+    exit()
 
 while True:
     message = input("👤: ")
