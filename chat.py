@@ -1,6 +1,15 @@
 import openai
+from jproperties import Properties
 
-openai.api_key = "sk-aYDck************************udsm" # Replace this with your API key
+# Configure the properties file to get the API Key
+
+configs = Properties()
+with open('creds.properties', 'rb') as config_file:
+    configs.load(config_file)
+
+# Get the API Key from the properties file
+
+openai.api_key = configs.get("api_key").data
 
 print("ChatGPT: Hi, I'm ChatGPT. I'm a helpful assistant")
 messages = [
